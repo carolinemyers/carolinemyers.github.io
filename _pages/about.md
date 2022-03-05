@@ -10,6 +10,8 @@ redirect_from:
 
 <br/><img src='/images/caroline.jpg'>
 
+About me
+======
 I am a vision scientist and Ph.D. student studying the mechanisms underlying visual attention, perceptual processing, and visual working memory in the labs of [Chaz Firestone](https://perception.jhu.edu/#caroline) and [Justin Halberda](https://www.halberdalab.net/) at [Johns Hopkins University](https://www.jhu.edu/) in the [Department of Psychological and Brain Sciences](https://pbs.jhu.edu/). 
 
  I earned my MA in Psychology with a concentration in Cognition, Perception and Neuroscience from NYU's [Department of Psychology](https://as.nyu.edu/content/nyu-as/as/departments/psychology.html) and [Center for Neural Science](https://as.nyu.edu/content/nyu-as/as/departments/cns.html), where I was a researcher and lab manager in the [Carrasco Lab](https://carrascolab.hosting.nyu.edu/) with Marisa Carrasco. My research combines behavioral psychophysics, eye movements, and computational methods to study visual perception and attention, with a focus on how perceptual performance differs at isoeccentric peripheral locations around the visual field. My other research interests include [oculomotor markers of temporal expectation](https://www.nature.com/articles/s41467-020-17160-1), eye-movement (fixational and saccadic) and [pupillometric analyses](https://github.com/carolinemyers/PSA-pupil), [visual attention in special and developing populations](https://doi.org/10.1167/jov.20.11.873), and visual awareness and uncertainty in the periphery. 
