@@ -6,7 +6,9 @@ author_profile: true
 redirect_from:
   - /resume
 ---
-
+<embed src="/images/CVpdf.png" width="500" height="375" 
+ type="application/pdf">
+ 
 
 <br/><img src='/images/CV1.png'>
 <br/><img src='/images/CV2.png'>
