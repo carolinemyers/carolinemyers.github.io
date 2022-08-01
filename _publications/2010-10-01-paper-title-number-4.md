@@ -12,4 +12,4 @@ Abstract: Visual perception in human adults varies throughout the visual field, 
 
 [Download paper here](http://carolinemyers.github.io/files/NatComm.pdf)
 
-Recommended citation: Badde, S., Myers, C., Yuval-Greenberg, S. & Carrasco, M. (2020). "Oculomotor freezing reflects tactile temporal expectation and aids tactile perception." <i>Nature Communications </i>. 11(1): 3341.
+Recommended citation: Carrasco M, Roberts M, Myers C, Shukla L. Visual field asymmetries vary between children and adults. Curr Biol. 2022 Jun 6;32(11):R509-R510.
