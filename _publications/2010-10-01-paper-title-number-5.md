@@ -1,15 +1,15 @@
 ---
 title: "Visual field asymmetries vary between children and adults"
 collection: publications
-permalink: https://doi.org/10.1038/s41467-020-17160-1
+permalink: https://doi.org/10.1016/j.cub.2022.04.052
 excerpt: 'Abstract: Visual perception in human adults varies throughout the visual field, both across eccentricity — decreasing with distance from the center of gaze — and around isoeccentric locations — that is, with polar angle at a constant distance from the center of gaze. At isoeccentric locations, the same visual information yields better performance along the horizontal than vertical meridian (horizontal–vertical anisotropy, HVA) and along the lower than upper vertical meridian (vertical–meridian asymmetry, VMA). These perceptual polar angle asymmetries in adults have been well characterized. Poor perception at upper visual field locations would be particularly detrimental to children: in their perceptual world, given their height, many important events occur above eye level. Developmental aspects of visual perception have been well characterized 1 , and some basic dimensions, such as contrast sensitivity, continue to develop through childhood 2 , but there is no research on polar angle asymmetries before adulthood. Here, we investigated whether these asymmetries are present in children, and if so, whether they differ from those of adults. We found clear differences between children and adults in performance around the visual field: the HVA is less pronounced and the VMA is not present for children.'
 date: 2022/07/03
 venue: 'Current Biology'
-paperurl: 'https://doi.org/10.1038/s41467-020-17160-1'
-citation: 'Badde, S., Myers, C., Yuval-Greenberg, S. & Carrasco, M. (2020). &quot;Oculomotor freezing reflects tactile temporal expectation and aids tactile perception .&quot; <i> Nature Communications. 1</i>. 11(1): 3341.'
+paperurl: 'https://doi.org/10.1016/j.cub.2022.04.052'
+citation: 'Carrasco, M., Roberts, M., Myers, C., & Shukla, L. (2022). &quot;Visual field asymmetries vary between children and adults. .&quot; <i> Current Biology. 1</i>. 32(11), R509-R510.'
 ---
 Abstract: Visual perception in human adults varies throughout the visual field, both across eccentricity — decreasing with distance from the center of gaze — and around isoeccentric locations — that is, with polar angle at a constant distance from the center of gaze. At isoeccentric locations, the same visual information yields better performance along the horizontal than vertical meridian (horizontal–vertical anisotropy, HVA) and along the lower than upper vertical meridian (vertical–meridian asymmetry, VMA). These perceptual polar angle asymmetries in adults have been well characterized. Poor perception at upper visual field locations would be particularly detrimental to children: in their perceptual world, given their height, many important events occur above eye level. Developmental aspects of visual perception have been well characterized 1 , and some basic dimensions, such as contrast sensitivity, continue to develop through childhood 2 , but there is no research on polar angle asymmetries before adulthood. Here, we investigated whether these asymmetries are present in children, and if so, whether they differ from those of adults. We found clear differences between children and adults in performance around the visual field: the HVA is less pronounced and the VMA is not present for children.
 
 [Download paper here](http://carolinemyers.github.io/files/currBio.pdf)
 
-Recommended citation: Badde, S., Myers, C., Yuval-Greenberg, S. & Carrasco, M. (2020). "Oculomotor freezing reflects tactile temporal expectation and aids tactile perception." <i>Nature Communications </i>. 11(1): 3341.
+Recommended citation: Carrasco, M., Roberts, M., Myers, C., & Schukla, L. (2022). "Visual field asymmetries vary between children and adults." <i>Current Biology </i>. 32(11), R509-R510.
