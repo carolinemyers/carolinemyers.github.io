@@ -1,7 +1,7 @@
 ---
 title: "Visual guessing as strategic metacognition"
 collection: portfolio
-type: "Undergraduate course"
+excerpt: "Talk presented at the 2022 European Conference on Visual Perception"
 permalink: /portfolio/portfolio-0
 venue: "New York University, Department of Psychology"
 ---
