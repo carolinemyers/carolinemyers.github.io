@@ -1,0 +1,15 @@
+{
+  "items": [
+    {
+      "when": "2025",
+      "title": "Advocathon / Graduate advocacy",
+      "description": "Organized events and resources for graduate student advocacy (edit this blurb).",
+      "links": [
+        {
+          "label": "Event page",
+          "href": "https://example.com"
+        }
+      ]
+    }
+  ]
+}

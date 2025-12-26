@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Number adaptation survives spatial displacement",
+    "type": "Poster",
+    "venue": "Vision Sciences Society (VSS)",
+    "year": 2025,
+    "authors": "Myers, C.; Firestone, C.; Halberda, J.",
+    "description": "Poster describing object-based number adaptation that survives spatial displacement.",
+    "pdf": "files/presentations/Myers_VSS2025_Poster.pdf",
+    "tags": [
+      "adaptation",
+      "number",
+      "object-based"
+    ]
+  },
+  {
+    "title": "Recorded talk: Object-based adaptation beyond retinotopy",
+    "type": "Talk",
+    "venue": "Lab/department talk",
+    "year": 2025,
+    "authors": "Myers, C.",
+    "description": "Recorded talk (embedded from YouTube).",
+    "youtubeId": "dQw4w9WgXcQ",
+    "tags": [
+      "talk",
+      "adaptation"
+    ]
+  }
+]

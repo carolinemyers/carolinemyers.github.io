@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "when": "2025 \u2014 Johns Hopkins University",
+      "title": "Sensation & Perception (Instructor / TA)",
+      "description": "Lectures, labs, and student-driven psychophysics projects (edit this blurb).",
+      "links": [
+        {
+          "label": "Syllabus (PDF)",
+          "href": "files/media/Syllabus_SensationPerception.pdf",
+          "kind": "file"
+        }
+      ]
+    }
+  ]
+}

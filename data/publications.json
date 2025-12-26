@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "id": "myers2025-number-adaptation",
+      "year": 2025,
+      "authors": "Myers, C., Firestone, C., & Halberda, J.",
+      "title": "Number adaptation survives spatial displacement",
+      "venue": "Current Biology.",
+      "pdf": "files/publications/MyersFirestoneHalberda2025_NumberAdaptation.pdf",
+      "doi": "https://doi.org/10.xxxx/xxxx",
+      "commentary": "",
+      "osf": "https://osf.io/",
+      "tags": [
+        "Adaptation",
+        "Number",
+        "Object-based"
+      ]
+    },
+    {
+      "id": "example2024-iconic-wm",
+      "year": 2024,
+      "authors": "Lastname, A. B., & Myers, C.",
+      "title": "Example paper title goes here",
+      "venue": "Journal Name.",
+      "pdf": "files/publications/Example2024.pdf",
+      "doi": "",
+      "commentary": "https://example.com/commentary",
+      "osf": "",
+      "tags": [
+        "Working memory",
+        "Iconic memory"
+      ]
+    }
+  ]
+}
