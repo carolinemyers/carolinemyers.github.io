@@ -1,0 +1,1 @@
+Drop your publication PDFs here and match the filenames in data/publications.json

@@ -1,0 +1,1 @@
+Put syllabi/slides/etc here and link them from JSON.

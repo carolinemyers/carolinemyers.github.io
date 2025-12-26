@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Caroline Myers</title>
+  <meta name="description" content="Caroline Myers — perception science, adaptation, attention, and visual cognition." />
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <a class="brand-link" href="#home">
+          <img class="brand-avatar" src="assets/img/profile.jpg" alt="Caroline Myers" />
+        </a>
+        <div class="brand-text">
+          <div class="brand-name">Caroline Myers</div>
+          <div class="brand-tagline">Vision • Attention • Adaptation</div>
+        </div>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+        <ul id="nav-list" class="nav-list"></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO / ABOUT -->
+    <section id="home" class="section hero">
+      <div class="container hero-grid">
+        <figure class="profile">
+          <img src="assets/img/profile.jpg" alt="Portrait of Caroline Myers" loading="lazy" />
+          <figcaption class="muted">Photo credit: you (replace as desired)</figcaption>
+        </figure>
+
+        <div class="hero-copy">
+          <h1>Hi — I’m Caroline.</h1>
+          <p>
+            I’m a vision scientist studying how perception and attention interact over space and time.
+            A lot of my work uses psychophysics to ask what the visual system represents, when it updates,
+            and how it stays stable even when objects move.
+          </p>
+          <p>
+            I’m especially interested in adaptation and reference frames (retinotopic vs. object‑based/spatiotopic),
+            and in the relationship between sensory traces and working memory.
+          </p>
+          <p class="hero-links" id="hero-links">
+            <!-- populated by JS from data/site.json -->
+          </p>
+
+          <div class="badge-row" aria-label="Affiliations and quick links">
+            <!-- Add your “always present” icons here (SVGs stored in assets/icons/) -->
+            <a class="badge" href="#" target="_blank" rel="noreferrer">
+              <img src="assets/icons/placeholder.svg" alt="" aria-hidden="true" />
+              <span>JHU Vision Sciences</span>
+            </a>
+            <a class="badge" href="#" target="_blank" rel="noreferrer">
+              <img src="assets/icons/placeholder.svg" alt="" aria-hidden="true" />
+              <span>Lab / Group Link</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Publications</h2>
+          <p class="muted">Edit <code>data/publications.json</code> and drop PDFs into <code>files/publications/</code>.</p>
+        </div>
+
+        <div class="toolbar">
+          <label class="search">
+            <span class="sr-only">Search publications</span>
+            <input id="pub-search" type="search" placeholder="Search by title, author, year…" autocomplete="off" />
+          </label>
+          <div class="chips" id="publications-filters" aria-label="Publication filters"></div>
+        </div>
+
+        <ol class="pub-list" id="publications-list" aria-live="polite"></ol>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>CV</h2>
+          <p class="muted">Put your CV PDF at <code>files/cv/CV.pdf</code>. This page will auto‑link to it.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-row">
+            <a class="button" href="files/cv/CV.pdf" target="_blank" rel="noreferrer">Open CV (PDF)</a>
+            <span class="muted">If the embed below is blank, your PDF file name/path is wrong.</span>
+          </div>
+          <div class="pdf-embed">
+            <iframe title="CV PDF" src="files/cv/CV.pdf#view=FitH" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMOS -->
+    <section id="demos" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Demos</h2>
+          <p class="muted">Edit <code>data/demos.json</code>. Links can be to OSF, GitHub, live demos, etc.</p>
+        </div>
+        <div class="grid" id="demos-grid"></div>
+      </div>
+    </section>
+
+    <!-- TEACHING -->
+    <section id="teaching" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Teaching</h2>
+          <p class="muted">Edit <code>data/teaching.json</code> to add courses, TA roles, syllabi links, etc.</p>
+        </div>
+        <div class="stack" id="teaching-list"></div>
+      </div>
+    </section>
+
+    <!-- OUTREACH -->
+    <section id="outreach" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Outreach</h2>
+          <p class="muted">Edit <code>data/outreach.json</code>.</p>
+        </div>
+        <div class="stack" id="outreach-list"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p class="muted">Update contact links in <code>data/site.json</code>.</p>
+        </div>
+
+        <div class="contact-card card">
+          <div class="contact-grid">
+            <div>
+              <h3 class="h4">Email</h3>
+              <p><a id="email-link" href="#">you@example.com</a></p>
+
+              <h3 class="h4">Mailing address</h3>
+              <p class="muted" id="address">Department / Institution<br/>City, State</p>
+            </div>
+
+            <div>
+              <h3 class="h4">Elsewhere</h3>
+              <ul class="link-list" id="elsewhere-list"></ul>
+            </div>
+          </div>
+        </div>
+
+        <footer class="site-footer">
+          <p class="muted">
+            © <span id="year"></span> Caroline Myers. Built with plain HTML/CSS/JS and hosted on GitHub Pages.
+          </p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/site.js"></script>
+
+<section id="presentations" class="section" data-title="Presentations">
+  <div class="container">
+    <div class="section-header">
+      <h2>Presentations</h2>
+      <p class="muted">Posters and talks. PDFs preview inline; click “Open PDF” for a full-size view. You can also embed a YouTube talk.</p>
+    </div>
+
+    <div id="presentations-list" class="stack"></div>
+
+    <div class="small muted" style="margin-top:14px;">
+      Add poster PDFs in <code>files/presentations/</code> and list them in <code>data/presentations.json</code>.
+      For YouTube, add a <code>youtubeId</code> (the part after <code>v=</code>).
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

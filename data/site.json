@@ -1,0 +1,78 @@
+{
+  "tabs": [
+    {
+      "id": "home",
+      "label": "Home"
+    },
+    {
+      "id": "publications",
+      "label": "Publications"
+    },
+    {
+      "id": "presentations",
+      "label": "Presentations"
+    },
+    {
+      "id": "cv",
+      "label": "CV"
+    },
+    {
+      "id": "demos",
+      "label": "Demos"
+    },
+    {
+      "id": "teaching",
+      "label": "Teaching"
+    },
+    {
+      "id": "outreach",
+      "label": "Outreach"
+    },
+    {
+      "id": "contact",
+      "label": "Contact"
+    }
+  ],
+  "email": "caroline@example.com",
+  "address_html": "Department of Psychological & Brain Sciences<br/>Johns Hopkins University<br/>Baltimore, MD",
+  "quickLinks": [
+    {
+      "label": "Publications",
+      "href": "#publications",
+      "kind": "link",
+      "primary": true
+    },
+    {
+      "label": "CV (PDF)",
+      "href": "files/cv/CV.pdf",
+      "kind": "file",
+      "icon": "cv"
+    },
+    {
+      "label": "Google Scholar",
+      "href": "https://scholar.google.com/",
+      "kind": "link",
+      "icon": "scholar"
+    },
+    {
+      "label": "OSF",
+      "href": "https://osf.io/",
+      "kind": "link",
+      "icon": "osf"
+    }
+  ],
+  "elsewhere": [
+    {
+      "label": "Google Scholar",
+      "href": "https://scholar.google.com/"
+    },
+    {
+      "label": "ORCID",
+      "href": "https://orcid.org/"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/"
+    }
+  ]
+}
