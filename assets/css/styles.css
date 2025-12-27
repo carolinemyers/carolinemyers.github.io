@@ -479,7 +479,7 @@ h1,h2,h3{
 
 .small, .muted{ color: var(--muted); }
 
-/* Publications layout with optional thumbnail */
+/* Publications layout with optional thumbnail
 .pub-entry.pub-item{
   display: grid;
   grid-template-columns: 96px 1fr;
@@ -497,6 +497,38 @@ h1,h2,h3{
 @media (max-width: 640px){
   .pub-entry.pub-item{ grid-template-columns: 1fr; }
   .pub-thumb{ width: 100%; height: 180px; }
+} */
+
+/* Publication list layout */
+.pub-entry.pub-item{
+  display: grid;
+  grid-template-columns: 140px 1fr; /* FIXED column → consistent alignment */
+  column-gap: 16px;
+  align-items: start;
+}
+
+/* Rectangular thumbnail box */
+.pub-thumb{
+  width: 140px;
+  height: 90px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  object-fit: cover;   /* image fills box without affecting layout */
+}
+
+/* Placeholder when no image */
+.pub-thumb--empty{
+  background: linear-gradient(
+    135deg,
+    var(--surface-2),
+    var(--surface-3)
+  );
+}
+
+/* Right-hand text block */
+.pub-content{
+  display: block;
 }
 
 
