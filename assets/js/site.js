@@ -207,15 +207,63 @@ async function init(){
     }
   }
 
+  // function renderPubs(){
+  //   if(!pubList) return;
+  //   const filtered = all.filter(p => {
+  //     const okTag = (activeTag === "All") || (p.tags || []).includes(activeTag);
+  //     const okQ = !q || pubToText(p).includes(q);
+  //     return okTag && okQ;
+  //   });
+
+  //   pubList.innerHTML = "";
+  //   if(filtered.length === 0){
+  //     pubList.appendChild(el("li", { class:"pub" }, [
+  //       el("div", { class:"title" }, ["No matches."]),
+  //       el("div", { class:"citation" }, ["Try a different search term or filter."])
+  //     ]));
+  //     return;
+  //   }
+
+  //   for(const p of filtered){
+  //     const links = el("div", { class:"links" });
+
+  //     if(p.pdf){
+  //       links.appendChild(renderLink("PDF", p.pdf, "file"));
+  //     }
+  //     if(p.commentary){
+  //       links.appendChild(renderLink("Commentary", p.commentary, "link"));
+  //     }
+  //     if(p.doi){
+  //       links.appendChild(renderLink("DOI", p.doi, "link"));
+  //     }
+  //     if(p.osf){
+  //       links.appendChild(renderLink("OSF", p.osf, "link"));
+  //     }
+
+  //     const li = el("li", { class:"pub", id: p.id || "" }, [
+  //       el("div", { class:"meta" }, [
+  //         el("span", { class:"chip", style:"pointer-events:none;" }, [String(p.year || "")]),
+  //         ...(p.tags || []).slice(0,3).map(t => el("span", { class:"chip", style:"pointer-events:none;" }, [t]))
+  //       ]),
+  //       el("div", { class:"title" }, [p.title || "Untitled"]),
+  //       el("div", { class:"citation" }, [formatCitation(p)]),
+  //       links
+  //     ]);
+  //     pubList.appendChild(li);
+  //   }
+  // }
+
   function renderPubs(){
     if(!pubList) return;
+  
     const filtered = all.filter(p => {
       const okTag = (activeTag === "All") || (p.tags || []).includes(activeTag);
       const okQ = !q || pubToText(p).includes(q);
       return okTag && okQ;
     });
-
+  
     pubList.innerHTML = "";
+  
     if(filtered.length === 0){
       pubList.appendChild(el("li", { class:"pub" }, [
         el("div", { class:"title" }, ["No matches."]),
@@ -223,24 +271,30 @@ async function init(){
       ]));
       return;
     }
-
+  
     for(const p of filtered){
       const links = el("div", { class:"links" });
-
-      if(p.pdf){
-        links.appendChild(renderLink("PDF", p.pdf, "file"));
-      }
-      if(p.commentary){
-        links.appendChild(renderLink("Commentary", p.commentary, "link"));
-      }
-      if(p.doi){
-        links.appendChild(renderLink("DOI", p.doi, "link"));
-      }
-      if(p.osf){
-        links.appendChild(renderLink("OSF", p.osf, "link"));
-      }
-
-      const li = el("li", { class:"pub", id: p.id || "" }, [
+  
+      if(p.pdf)        links.appendChild(renderLink("PDF", p.pdf, "file"));
+      if(p.commentary) links.appendChild(renderLink("Commentary", p.commentary, "link"));
+      if(p.doi)        links.appendChild(renderLink("DOI", p.doi, "link"));
+      if(p.osf)        links.appendChild(renderLink("OSF", p.osf, "link"));
+  
+      // --- Thumbnail (optional) ---
+      const hasImg = p.image && String(p.image).trim().length > 0;
+  
+      // If no image, we still insert a placeholder block so text alignment stays consistent.
+      const thumb = hasImg
+        ? el("img", {
+            class: "pub-thumb",
+            src: p.image,
+            alt: `Thumbnail for ${p.title || "publication"}`,
+            loading: "lazy"
+          })
+        : el("div", { class: "pub-thumb pub-thumb--empty", "aria-hidden": "true" });
+  
+      // --- Right-side content block ---
+      const content = el("div", { class:"pub-content" }, [
         el("div", { class:"meta" }, [
           el("span", { class:"chip", style:"pointer-events:none;" }, [String(p.year || "")]),
           ...(p.tags || []).slice(0,3).map(t => el("span", { class:"chip", style:"pointer-events:none;" }, [t]))
@@ -249,9 +303,17 @@ async function init(){
         el("div", { class:"citation" }, [formatCitation(p)]),
         links
       ]);
+  
+      // --- Layout wrapper: fixed left column + content ---
+      const li = el("li", { class:"pub pub-entry pub-item", id: p.id || "" }, [
+        thumb,
+        content
+      ]);
+  
       pubList.appendChild(li);
     }
   }
+  
 
   renderFilters();
   renderPubs();
