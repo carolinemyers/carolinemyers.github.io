@@ -504,7 +504,7 @@ h1,h2,h3{
   display: grid;
   grid-template-columns: 200px 1fr; /* FIXED column → consistent alignment */
   column-gap: 16px;
-  align-items: start;
+  align-items: center;
 }
 
 /* Rectangular thumbnail box */
