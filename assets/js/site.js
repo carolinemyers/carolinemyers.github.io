@@ -143,13 +143,33 @@ async function init(){
   // Hero quick links
   const heroLinks = document.getElementById("hero-links");
   if(heroLinks && site.quickLinks){
-    heroLinks.innerHTML = ""; heroLinks.classList.add("icon-grid");
+    heroLinks.innerHTML = "";
+    heroLinks.classList.add("icon-grid");
+
+    function inferKind(q){
+      const hint = (q.icon || q.kind || "").toLowerCase();
+      if(hint) return hint;
+      const label = (q.label || "").toLowerCase();
+      if(label.includes("scholar")) return "scholar";
+      if(label.includes("orcid")) return "orcid";
+      if(label.includes("github")) return "github";
+      if(label.includes("osf")) return "osf";
+      if(label.includes("cv")) return "cv";
+      if((q.href||"").startsWith("mailto:")) return "email";
+      if((q.href||"").includes("youtu")) return "youtube";
+      return "link";
+    }
+
     for(const q of site.quickLinks){
-      const kindGuess = (q.icon || q.kind || "").toLowerCase();
+      const kind = inferKind(q);
+      const href = q.href || "#";
       const label = q.label || "";
-      const kind = kindGuess || (label.toLowerCase().includes("scholar") ? "scholar" : label.toLowerCase().includes("orcid") ? "orcid" : label.toLowerCase().includes("github") ? "github" : label.toLowerCase().includes("osf") ? "osf" : label.toLowerCase().includes("cv") ? "cv" : (q.href?.startsWith("mailto:") ? "email" : (q.href?.includes("youtu") ? "youtube" : "link")));
-      const a = el("a", { class: "icon-tile", href: q.href,
-        target: q.href.startsWith("#") ? "_self" : "_blank", rel: "noreferrer" }, [
+      const a = el("a", {
+        class: "icon-tile",
+        href,
+        target: href.startsWith("#") ? "_self" : "_blank",
+        rel: "noreferrer"
+      }, [
         el("span", { html: iconSVG(kind) }),
         el("div", { class: "label" }, [label])
       ]);
