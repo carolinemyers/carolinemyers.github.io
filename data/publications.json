@@ -1,15 +1,15 @@
 {
   "items": [
     {
-      "id": "myers2025-number-adaptation",
+      "id": "MyersFirestoneHalberda2025",
       "year": 2025,
       "authors": "Myers, C., Firestone, C., & Halberda, J.",
       "title": "Number adaptation survives spatial displacement",
       "venue": "Current Biology.",
-      "pdf": "files/publications/MyersFirestoneHalberda2025_NumberAdaptation.pdf",
-      "doi": "https://doi.org/10.xxxx/xxxx",
-      "commentary": "",
-      "osf": "https://osf.io/",
+      "pdf": "files/publications/MyersFirestoneHalberda2025.pdf",
+      "doi": "https://doi.org/10.1016/j.cub.2025.10.051",
+      "commentary": "files/publications/RolfsInce2025_Commentary.pdf",
+      "osf": "https://osf.io/6exy9/",
       "tags": [
         "Adaptation",
         "Number",
@@ -17,19 +17,49 @@
       ]
     },
     {
-      "id": "example2024-iconic-wm",
-      "year": 2024,
-      "authors": "Lastname, A. B., & Myers, C.",
-      "title": "Example paper title goes here",
-      "venue": "Journal Name.",
-      "pdf": "files/publications/Example2024.pdf",
-      "doi": "",
-      "commentary": "https://example.com/commentary",
+      "id": "CarrascoMyersRoberts2025",
+      "year": 2025,
+      "authors": "Carrasco, M.C., Myers, C., & Roberts, M.",
+      "title": "Visual field asymmetries develop throughout adolescence",
+      "venue": "iScience.",
+      "pdf": "files/publications/CarrascoMyersRoberts2025.pdf",
+      "doi": "https://doi.org/10.1016/j.isci.2025.113782",
+      "osf": "https://osf.io/XJH36/",
+      "tags": [
+        "Developmental neuroscience",
+        "Sensory neuroscience", "Psychology"
+      ]
+    },
+
+    {
+      "id": "Myers2022",
+      "year": 2022,
+      "authors": "Myers, C.",
+      "title": "Ambiguous perception from bottom to top",
+      "venue": "Nature Reviews Psychology.",
+      "pdf": "files/publications/Myers2022.pdf",
+      "doi": "https://doi.org/10.1038/s44159-022-00128-x",
       "osf": "",
       "tags": [
-        "Working memory",
-        "Iconic memory"
+        "Ambiguous perception","Motion",
+        "Psychophysics"
+      ]
+    },
+
+    {
+      "id": "CarrascoRobertsMyersShukla2022",
+      "year": 2022,
+      "authors": "Carrasco, M.C., Roberts, M., Myers, C., & Shukla, L.",
+      "title": "Visual field asymmetries vary between children and adults",
+      "venue": "Current Biology.",
+      "pdf": "files/publications/CarrascoRobertsMyersShukla2022.pdf",
+      "doi": "https://doi.org/10.1016/j.cub.2022.04.052",
+      "osf": "",
+      "tags": [
+        "Developmental neuroscience","Visual field asymmetries",
+        "Psychophysics"
       ]
     }
+
   ]
 }
