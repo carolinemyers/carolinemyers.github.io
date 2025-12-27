@@ -502,7 +502,7 @@ h1,h2,h3{
 /* Publication list layout */
 .pub-entry.pub-item{
   display: grid;
-  grid-template-columns: 200 1fr; /* FIXED column → consistent alignment */
+  grid-template-columns: 200px 1fr; /* FIXED column → consistent alignment */
   column-gap: 16px;
   align-items: start;
 }
@@ -510,7 +510,7 @@ h1,h2,h3{
 /* Rectangular thumbnail box */
 .pub-thumb{
   width: 200px;
-  height: 200px;
+  height: 100px;
   border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--surface-2);
