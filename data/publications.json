@@ -14,7 +14,9 @@
         "Adaptation",
         "Number",
         "Object-based"
-      ]
+      ],
+      "image": "assets/img/publication_img/MyersFirestoneHalberda2025.png"
+
     },
     {
       "id": "CarrascoMyersRoberts2025",
@@ -28,7 +30,8 @@
       "tags": [
         "Developmental neuroscience",
         "Sensory neuroscience", "Psychology"
-      ]
+      ],
+      "image": "assets/img/publication_img/CarrascoMyersRoberts2025.png"
     },
 
     {
@@ -58,7 +61,8 @@
       "tags": [
         "Developmental neuroscience","Visual field asymmetries",
         "Psychophysics"
-      ]
+      ],
+      "image": "assets/img/publication_img/CarrascoRobertsMyersShukla2022.png"
     }
 
   ]
