@@ -143,33 +143,13 @@ async function init(){
   // Hero quick links
   const heroLinks = document.getElementById("hero-links");
   if(heroLinks && site.quickLinks){
-    heroLinks.innerHTML = "";
-    heroLinks.classList.add("icon-grid");
-
-    function inferKind(q){
-      const hint = (q.icon || q.kind || "").toLowerCase();
-      if(hint) return hint;
-      const label = (q.label || "").toLowerCase();
-      if(label.includes("scholar")) return "scholar";
-      if(label.includes("orcid")) return "orcid";
-      if(label.includes("github")) return "github";
-      if(label.includes("osf")) return "osf";
-      if(label.includes("cv")) return "cv";
-      if((q.href||"").startsWith("mailto:")) return "email";
-      if((q.href||"").includes("youtu")) return "youtube";
-      return "link";
-    }
-
+    heroLinks.innerHTML = ""; heroLinks.classList.add("icon-grid");
     for(const q of site.quickLinks){
-      const kind = inferKind(q);
-      const href = q.href || "#";
+      const kindGuess = (q.icon || q.kind || "").toLowerCase();
       const label = q.label || "";
-      const a = el("a", {
-        class: "icon-tile",
-        href,
-        target: href.startsWith("#") ? "_self" : "_blank",
-        rel: "noreferrer"
-      }, [
+      const kind = kindGuess || (label.toLowerCase().includes("scholar") ? "scholar" : label.toLowerCase().includes("orcid") ? "orcid" : label.toLowerCase().includes("github") ? "github" : label.toLowerCase().includes("osf") ? "osf" : label.toLowerCase().includes("cv") ? "cv" : (q.href?.startsWith("mailto:") ? "email" : (q.href?.includes("youtu") ? "youtube" : "link")));
+      const a = el("a", { class: "icon-tile", href: q.href,
+        target: q.href.startsWith("#") ? "_self" : "_blank", rel: "noreferrer" }, [
         el("span", { html: iconSVG(kind) }),
         el("div", { class: "label" }, [label])
       ]);
@@ -198,10 +178,11 @@ async function init(){
   }
 
   // Publications
-  const pubs = await fetchJSON("data/publications.json");
-  const pubList = document.getElementById("pub-list");
+  const pubsData = await fetchJSON("data/publications.json");
+  const pubs = Array.isArray(pubsData) ? pubsData : (pubsData.items || []);
+const pubList = document.getElementById("publications-list");
   const search = document.getElementById("pub-search");
-  const filters = document.getElementById("pub-filters");
+  const filters = document.getElementById("publications-filters");
 
   let all = (pubs.items || []).slice();
   // Newest first by year, then by "order" if provided
