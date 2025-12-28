@@ -90,12 +90,27 @@ function formatCitation(p){
   return pieces.join(" ");
 }
 
-function renderLink(label, href, kind="link"){
-  return el("a", { class: "button", href, target: "_blank", rel: "noreferrer" }, [
-    el("span", { html: iconSVG(kind) }),
-    label
-  ]);
+// function renderLink(label, href, kind="link"){
+//   return el("a", { class: "button", href, target: "_blank", rel: "noreferrer" }, [
+//     el("span", { html: iconSVG(kind) }),
+//     label
+//   ]);
+// }
+
+function renderLink(label, href, kind){
+  const isHash = (href || "").startsWith("#");
+  const isPdf = (href || "").toLowerCase().endsWith(".pdf");
+
+  return el("a", {
+    class: "link",
+    href,
+    target: isHash ? "_self" : "_blank",
+    rel: "noopener noreferrer"
+    // IMPORTANT: do NOT include "download" here
+  }, [label]);
 }
+
+
 
 function unique(arr){
   return [...new Set(arr)];
