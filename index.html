@@ -99,7 +99,7 @@
       <div class="container">
         <div class="section-head">
           <h2>CV</h2>
-          <p class="muted">Put your CV PDF at <code>files/cv/CV.pdf</code>. This page will auto‑link to it.</p>
+        <!--  <p class="muted">Put your CV PDF at <code>files/cv/CV.pdf</code>. This page will auto‑link to it.</p> -->
         </div>
 
         <div class="card">
@@ -108,8 +108,13 @@
             <span class="muted">If the embed below is blank, your PDF file name/path is wrong.</span>
           </div>
           <div class="pdf-embed">
-            <iframe title="CV PDF" src="files/cv/CV.pdf#view=FitH" loading="lazy"></iframe>
-          </div>
+            <object class="pdf-object" data="files/cv/CV.pdf#view=FitH" type="application/pdf">
+              <div class="muted" style="padding:14px;">
+                Inline preview not available in this browser.
+                <a href="files/cv/CV.pdf" target="_blank" rel="noreferrer">Open the CV PDF</a>.
+              </div>
+            </object>
+          </div>          
         </div>
       </div>
     </section>
