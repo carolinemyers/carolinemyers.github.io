@@ -711,8 +711,8 @@ a:hover{ color: var(--accent); }
   border-radius: 16px;
 }
 .badge img{
-  width: 26px;
-  height: 26px;
+  width: 40px;
+  height: 40px;
   opacity: 0.95;
 }
 .badge span{
