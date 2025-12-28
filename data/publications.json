@@ -63,6 +63,22 @@
         "Psychophysics"
       ],
       "image": "assets/img/publication_img/CarrascoRobertsMyersShukla2022.png"
+    },
+
+    {
+      "id": "BaddeMyersYuvalGreenbergCarrasco2020",
+      "year": 2020,
+      "authors": "Badde, S., Myers, C., Yuval-Greenberg, S., & Carrasco, M.",
+      "title": "Oculomotor freezing reflects tactile temporal expectation and aids tactile perception",
+      "venue": "Nature Communications.",
+      "pdf": "files/publications/BaddeMyersYuvalGreenbergCarrasco2020.pdf",
+      "doi": "https://doi.org/10.1038/s41467-020-17160-1",
+      "osf": "https://doi.org/10.17605/OSF.IO/7ZSRQ",
+      "tags": [
+        "Microsaccades","Temporal expectation",
+        "Psychophysics"
+      ],
+      "image": "assets/img/publication_img/BaddeMyersYuvalGreenbergCarrasco2020.png"
     }
 
   ]
