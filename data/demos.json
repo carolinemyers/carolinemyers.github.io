@@ -1,26 +1,16 @@
 {
   "items": [
     {
-      "title": "Orientation adaptation demo",
-      "description": "A simple demo showing adaptation aftereffects and how they depend on reference frame.",
+      "title": "Object-based adaptation to number",
+      "description": "Demo materials for Myers, Firestone, & Halberda (2025).",
       "links": [
         {
-          "label": "Live demo",
-          "href": "https://example.com"
+          "label": "Live demos",
+          "href": "https://carolinemyers.github.io/number-adaptation/"
         },
         {
-          "label": "Code",
-          "href": "https://github.com/"
-        }
-      ]
-    },
-    {
-      "title": "Object-based number adaptation",
-      "description": "Materials and figures linked from OSF, plus a short explainer.",
-      "links": [
-        {
-          "label": "OSF project",
-          "href": "https://osf.io/"
+          "label": "Read the paper here!",
+          "href": "https://carolinemyers.github.io/files/publications/MyersFirestoneHalberda2025.pdf"
         }
       ]
     }
