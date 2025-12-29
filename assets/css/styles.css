@@ -734,11 +734,19 @@ a:hover{ color: var(--accent); }
   box-shadow: var(--shadow-sm);
 }
 
-.hero-photo img{
+/* .hero-photo img{
   width: 100%;
   height: auto;
   display: block;
+} */
+
+.hero-photo img{
+  width: 320px;          /* <-- controls size */
+  max-width: 100%;       /* responsive on small screens */
+  height: auto;
+  display: block;
 }
+
 
 /* Make the hero read like the rest of the site */
 .hero-copy{
