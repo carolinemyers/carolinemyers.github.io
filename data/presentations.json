@@ -1,29 +1,106 @@
 [
   {
-    "title": "Number adaptation survives spatial displacement",
+    "title": "Covert exogenous spatial attention improves performance similarly across development",
+    "type": "Talk",
+    "venue": "European Conference on Visual Perception (ECVP)",
+    "year": 2025,
+    "authors": "Myers, C. & Carrasco, M.",
+    "tags": [
+      "exogenous attention", "visual field asymmetries",
+      "development"
+    ]
+  },
+  {
+    "title": "Persistent representations of object identity depend on conscious perception",
     "type": "Poster",
     "venue": "Vision Sciences Society (VSS)",
     "year": 2025,
-    "authors": "Myers, C.; Firestone, C.; Halberda, J.",
-    "description": "Poster describing object-based number adaptation that survives spatial displacement.",
-    "pdf": "files/presentations/Myers_VSS2025_Poster.pdf",
+    "authors": "Myers, C., Mazalik., P., Halberda, J. & Flombaum, J.",
+    "pdf": "files/presentations/MyersVSS2025.pdf",
+    "tags": [
+      "objects",
+      "conscious perception"
+    ]
+  },
+
+  {
+    "title": "Number: still a primary feature?",
+    "type": "Poster",
+    "venue": "Vision Sciences Society (VSS)",
+    "year": 2024,
+    "authors": "Myers, C., Firestone, C., & Halberda, J.",
+    "pdf": "files/presentations/MyersVSS2024.pdf",
     "tags": [
       "adaptation",
       "number",
       "object-based"
     ]
   },
+
   {
-    "title": "Recorded talk: Object-based adaptation beyond retinotopy",
+    "title": "Visual guessing as counterfactual metacognition",
     "type": "Talk",
-    "venue": "Lab/department talk",
-    "year": 2025,
-    "authors": "Myers, C.",
+    "venue": "European Conference on Visual Perception (ECVP)",
+    "year": 2022,
+    "authors": "Myers, C., Sanford, E., Firestone, C., & Halberda, J.",
     "description": "Recorded talk (embedded from YouTube).",
-    "youtubeId": "dQw4w9WgXcQ",
+    "youtubeId": "Dr513JVe3bk",
     "tags": [
-      "talk",
-      "adaptation"
+      "working memory","mixture modeling",
+      "guessing"
+    ]
+  },
+
+  {
+    "title": "Visual processing of burning fire",
+    "type": "Poster",
+    "venue": "European Summer School on Eye Movements (ESSEM)",
+    "year": 2022,
+    "authors": "Myers, C., Firestone, C., & Halberda, J.",
+    "pdf": "files/presentations/MyersESSEM2022.pdf",
+    "tags": [
+       "visual search","higher-order features",
+      "fire"
+    ]
+  },
+  
+  {
+    "title": "Visual guessing is anti-Bayesian",
+    "type": "Poster",
+    "venue": "Annual Meeting of the Vision Sciences Society (VSS)",
+    "year": 2022,
+    "authors": "Halberda, J., Myers, C., & Firestone, C.",
+    "pdf": "files/presentations/MyersVSS2022b.pdf",
+    "tags": [
+      "working memory","mixture modeling",
+      "guessing"
+    ]
+  },
+  {
+    "title": "Attention to fire",
+    "type": "Poster",
+    "venue": "Annual Meeting of the Vision Sciences Society (VSS)",
+    "year": 2022,
+    "authors": "Myers, C., Firestone, C., & Halberda, J.",
+    "pdf": "files/presentations/MyersVSS2022a.pdf",
+    "tags": [
+      "visual search","higher-order features",
+      "fire"
+    ]
+  },  
+  
+  {
+    "title": "Adolescents' and adults' sensitivity differs around the visual field",
+    "type": "Poster",
+    "venue": "Annual Meeting of the Vision Sciences Society (VSS)",
+    "year": 2020,
+    "authors": "Myers, C., & Carrasco, M.",
+    "pdf": "files/presentations/MyersVSS2020.pdf",
+    "tags": [
+      "visual field asymmetries","development",
+      "spatial attention"
     ]
   }
+
+  
 ]
