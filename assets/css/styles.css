@@ -777,3 +777,36 @@ a:hover{ color: var(--accent); }
     width: 220px;
   }
 }
+
+/* ===== Center landing intro (image + text), keep it reasonably wide ===== */
+.hero .hero-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: 1100px;   /* makes the intro feel wide, not cramped */
+  margin: 0 auto;
+  text-align: center;  /* centers name + paragraphs */
+}
+
+.hero .hero-image{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero .hero-image img{
+  width: 320px;       /* reasonable portrait size */
+  max-width: 80vw;    /* responsive */
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Let the text be wide, but still readable */
+.hero .hero-copy{
+  max-width: 95ch;     /* wider than a typical reading column */
+  margin: 0 auto;
+}
