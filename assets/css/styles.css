@@ -740,21 +740,40 @@ a:hover{ color: var(--accent); }
   display: block;
 } */
 
-.hero-photo img{
-  width: 320px;          /* <-- controls size */
-  max-width: 100%;       /* responsive on small screens */
-  height: auto;
-  display: block;
+/* ===== Landing intro: aligned + professional ===== */
+
+.hero-row{
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 24px;
+  max-width: 900px;
 }
 
+.hero-image img{
+  width: 180px;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
 
-/* Make the hero read like the rest of the site */
 .hero-copy{
   text-align: left;
 }
 
 .hero-name{
-  margin: 8px 0 10px 0;
-  font-size: clamp(34px, 4vw, 46px);
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: clamp(32px, 4vw, 44px);
   letter-spacing: -0.02em;
+}
+
+/* Mobile: stack cleanly */
+@media (max-width: 700px){
+  .hero-row{
+    grid-template-columns: 1fr;
+  }
+  .hero-image img{
+    width: 220px;
+  }
 }
