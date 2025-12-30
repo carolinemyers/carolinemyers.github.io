@@ -810,7 +810,7 @@ a:hover{ color: var(--accent); }
 
 
 .hero .hero-image img{
-  width: 420px;        /* <-- CONTROL IMAGE SIZE HERE */
+  width: 320px;        /* <-- CONTROL IMAGE SIZE HERE */
   max-width: 90vw;     /* responsive on small screens */
   height: auto;        /* preserves 4565 × 2259 ratio */
   border-radius: var(--r-lg);
@@ -887,16 +887,25 @@ a.button:hover, .button:hover{
 
 /* Match Publications width + calmer name styling */
 
+
 .hero .hero-copy{
-  max-width: var(--maxw);   /* SAME width as Publications */
+  max-width: var(--maxw);
   margin: 0 auto;
   text-align: center;
+  font-size: 1rem; /* lock it to normal body size */
 }
 
+
+/* Force name to match section headers exactly */
+/* Force name to match section headers exactly */
 .hero-name{
   font-family: var(--serif);
-  font-size: 1.85rem;      /* EXACT match to Publications */
+  font-size: 1.7rem;
   font-weight: 700;
-  margin: 14px 0 8px 0;
+  margin: 12px 0 10px 0;
   letter-spacing: -0.015em;
+  line-height: 1.15;
 }
+
+
+.hero .hero-copy h1{ font-size: 1.85rem !important; }
