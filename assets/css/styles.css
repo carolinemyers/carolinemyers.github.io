@@ -757,16 +757,6 @@ a:hover{ color: var(--accent); }
   background: var(--surface);
 }
 
-.hero-copy{
-  text-align: left;
-}
-
-.hero-name{
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: clamp(32px, 4vw, 44px);
-  letter-spacing: -0.02em;
-}
 
 /* Mobile: stack cleanly */
 @media (max-width: 700px){
@@ -805,8 +795,122 @@ a:hover{ color: var(--accent); }
   box-shadow: var(--shadow-sm);
 }
 
-/* Let the text be wide, but still readable */
-.hero .hero-copy{
-  max-width: 95ch;     /* wider than a typical reading column */
+
+/* ===== v5 landing + button sanity (paste at end) ===== */
+
+/* 1) Fix variable mismatches used earlier in the file */
+:root{
+  --sans: var(--font-sans);
+  --serif: var(--font-sans);
+  --card: var(--surface);
+  --bg-alt: var(--surface-2);
+  --radius: var(--r-xl);
+  --shadow: var(--shadow-sm);
+}
+
+/* 2) Make the hero feel calmer + consistent */
+.hero{
+  background: none; /* removes the strong radial hero gradients */
+}
+
+/* Keep the centered landing you wanted, but wide */
+.hero .hero-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: var(--maxw);
   margin: 0 auto;
+  text-align: center;
+}
+
+/* Center the image, keep its aspect ratio (your 4565x2259 will scale nicely) */
+.hero .hero-image img{
+  width: min(820px, 92vw);   /* “reasonable”: big but not insane */
+  height: auto;              /* preserves your original ratio */
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Let intro text be wide, centered */
+
+
+/* 3) IMPORTANT: stop making every <button> a glossy primary button */
+button{
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 14px;
+}
+button:hover{
+  background: var(--surface-2);
+}
+
+/* Keep your real CTA buttons looking like buttons */
+a.button, .button{
+  background: linear-gradient(135deg, var(--royal), var(--accent-2));
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+}
+a.button:hover, .button:hover{
+  filter: brightness(1.03);
+  text-decoration: none;
+}
+
+/* 4) Make research questions look “academic nice”, not UI toys */
+.rq{
+  margin-top: 18px;
+}
+.rq-title{
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.rq-links{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.rq-link{
+  display: block;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  box-shadow: 0 1px 0 rgba(2,8,23,0.03);
+}
+.rq-link:hover{
+  border-color: rgba(47, 91, 255, 0.22);
+  background: var(--surface-2);
+  text-decoration: none;
+}
+
+/* 5) Badge icons: bigger without making the badge itself huge */
+.badge img{
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+/* Match Publications width + calmer name styling */
+
+.hero .hero-copy{
+  max-width: var(--maxw);   /* SAME width as Publications */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-name{
+  margin: 10px 0 12px 0;
+  font-size: 1.7rem;        /* smaller, academic */
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
