@@ -779,22 +779,6 @@ a:hover{ color: var(--accent); }
   text-align: center;  /* centers name + paragraphs */
 }
 
-.hero .hero-image{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.hero .hero-image img{
-  width: 320px;       /* reasonable portrait size */
-  max-width: 80vw;    /* responsive */
-  height: auto;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
-}
-
 
 /* ===== v5 landing + button sanity (paste at end) ===== */
 
@@ -824,11 +808,12 @@ a:hover{ color: var(--accent); }
   text-align: center;
 }
 
-/* Center the image, keep its aspect ratio (your 4565x2259 will scale nicely) */
+
 .hero .hero-image img{
-  width: min(820px, 92vw);   /* “reasonable”: big but not insane */
-  height: auto;              /* preserves your original ratio */
-  border-radius: var(--r-xl);
+  width: 420px;        /* <-- CONTROL IMAGE SIZE HERE */
+  max-width: 90vw;     /* responsive on small screens */
+  height: auto;        /* preserves 4565 × 2259 ratio */
+  border-radius: var(--r-lg);
   border: 1px solid var(--border);
   background: var(--surface);
   box-shadow: var(--shadow-sm);
@@ -909,8 +894,9 @@ a.button:hover, .button:hover{
 }
 
 .hero-name{
-  margin: 10px 0 12px 0;
-  font-size: 1.7rem;        /* smaller, academic */
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-family: var(--serif);
+  font-size: 1.85rem;      /* EXACT match to Publications */
+  font-weight: 700;
+  margin: 14px 0 8px 0;
+  letter-spacing: -0.015em;
 }
