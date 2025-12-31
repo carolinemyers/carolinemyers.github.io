@@ -1,31 +1,13 @@
 {
   "tabs": [
-    {
-      "id": "home",
-      "label": "Home"
-    },
-    {
-      "id": "publications",
-      "label": "Publications"
-    },
-    {
-      "id": "presentations",
-      "label": "Presentations"
-    },
-    {
-      "id": "cv",
-      "label": "CV"
-    },
-    {
-      "id": "demos",
-      "label": "Demos"
-    },
-    {
-      "id": "contact",
-      "label": "Contact"
-    }
-  ],
-  "email": "caroline@example.com",
+  { "id": "home", "label": "Home" },
+  { "id": "publications", "label": "Publications" },
+  { "id": "cv", "label": "CV" },
+  { "id": "demos", "label": "Demos" },
+  { "id": "presentations", "label": "Presentations" },
+  { "id": "contact", "label": "Contact" }
+],
+  "email": "cmyers60@jhu.edu",
   "address_html": "Department of Psychological & Brain Sciences<br/>Johns Hopkins University<br/>Baltimore, MD",
   "quickLinks": [
     {
@@ -42,13 +24,13 @@
     },
     {
       "label": "Google Scholar",
-      "href": "https://scholar.google.com/",
+      "href": "https://scholar.google.com/citations?user=NWskHMIAAAAJ&hl=en&oi=ao",
       "kind": "link",
       "icon": "scholar"
     },
     {
       "label": "OSF",
-      "href": "https://osf.io/",
+      "href": "https://osf.io/kpnqj/",
       "kind": "link",
       "icon": "osf"
     }
@@ -56,15 +38,15 @@
   "elsewhere": [
     {
       "label": "Google Scholar",
-      "href": "https://scholar.google.com/"
+      "href": "https://scholar.google.com/citations?user=NWskHMIAAAAJ&hl=en&oi=ao"
     },
     {
       "label": "ORCID",
-      "href": "https://orcid.org/"
+      "href": "https://orcid.org/0000-0002-9658-8237"
     },
     {
       "label": "GitHub",
-      "href": "https://github.com/"
+      "href": "https://github.com/carolinemyers"
     }
   ]
 }
