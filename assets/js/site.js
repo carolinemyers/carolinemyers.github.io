@@ -129,6 +129,20 @@ function unique(arr){
 async function init(){
   // Presentations
   await loadPresentations();
+
+    // Clickable presentation tags -> jump to Publications filtered by that tag
+    const presRoot = document.getElementById("presentations-list");
+    if(presRoot){
+      presRoot.addEventListener("click", (e) => {
+        const b = e.target.closest(".pill-tag");
+        if(!b) return;
+        const tag = decodeURIComponent(b.getAttribute("data-tag") || "");
+        if(!tag) return;
+        window.location.hash = `#publications?tag=${encodeURIComponent(tag)}`;
+      });
+    }
+
+    
   // Footer year
   const yearEl = document.getElementById("year");
   if(yearEl) yearEl.textContent = String(new Date().getFullYear());
@@ -477,7 +491,10 @@ function renderPresentations(items){
       const type = escapeHtml(safeText(p.type));
       const desc = escapeHtml(safeText(p.description));
 
-      const tagPills = (p.tags||[]).map(t=>`<span class="pill">${escapeHtml(t)}</span>`).join("");
+      //const tagPills = (p.tags||[]).map(t=>`<span class="pill">${escapeHtml(t)}</span>`).join("");
+
+      const tagPills = (p.tags||[]).map(t=>`<button class="pill pill-tag" type="button" data-tag="${encodeURIComponent(String(t))}">${escapeHtml(t)}</button>`).join("");
+
 
       let embed = "";
       let buttons = "";
