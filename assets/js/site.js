@@ -494,8 +494,12 @@ async function loadPresentations(){
   try{
     const resp = await fetch("data/presentations.json");
     if(!resp.ok) throw new Error("Failed to load presentations.json");
-    const items = await resp.json();
-    renderPresentations(items);
+    // const items = await resp.json();
+    // renderPresentations(items);
+    const data = await resp.json();
+const items = Array.isArray(data) ? data : (data.items || []);
+renderPresentations(items);
+
   }catch(e){
     const root = document.getElementById("presentations-list");
     if(root){
