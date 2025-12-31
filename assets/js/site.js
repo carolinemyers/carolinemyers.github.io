@@ -525,18 +525,43 @@ function renderPresentations(items){
 
 async function loadPresentations(){
   try{
-    const resp = await fetch("data/presentations.json");
+  //  const resp = await fetch("data/presentations.json");
+    const resp = await fetch("data/presentations.json", { cache: "no-store" });
     if(!resp.ok) throw new Error("Failed to load presentations.json");
     // const items = await resp.json();
     // renderPresentations(items);
-    const data = await resp.json();
-const items = Array.isArray(data) ? data : (data.items || []);
+   // const data = await resp.json();
+//const items = Array.isArray(data) ? data : (data.items || []);
+//renderPresentations(items);
+const data = await resp.json();
+
+// Accept BOTH formats:
+// 1) [ ... ]
+// 2) { "items": [ ... ] }
+const items =
+  Array.isArray(data) ? data :
+  Array.isArray(data?.items) ? data.items :
+  [];
+
 renderPresentations(items);
 
-  }catch(e){
-    const root = document.getElementById("presentations-list");
-    if(root){
-      root.innerHTML = '<div class="card"><div class="pad">Could not load <code>data/presentations.json</code>. Check the file exists and is valid JSON.</div></div>';
-    }
+
+} catch(e){
+  const root = document.getElementById("presentations-list");
+  if(root){
+    root.innerHTML = `
+      <div class="card"><div class="pad">
+        <b>Presentations failed to load.</b><br>
+        <span class="muted">Error:</span> <code>${escapeHtml(String(e))}</code><br>
+        <span class="muted">Check:</span> <code>data/presentations.json</code> exists and is valid JSON.
+      </div></div>`;
   }
+}
+
+  // }catch(e){
+  //   const root = document.getElementById("presentations-list");
+  //   if(root){
+  //     root.innerHTML = '<div class="card"><div class="pad">Could not load <code>data/presentations.json</code>. Check the file exists and is valid JSON.</div></div>';
+  //   }
+  // }
 }
