@@ -118,7 +118,7 @@ function unique(arr){
 
 async function init(){
   // Presentations
-  loadPresentations();
+  await loadPresentations();
   // Footer year
   const yearEl = document.getElementById("year");
   if(yearEl) yearEl.textContent = String(new Date().getFullYear());
@@ -393,6 +393,21 @@ async function init(){
 
   // If loading with a hash, make sure nav highlight is correct after layout
   window.setTimeout(setActiveNav, 250);
+
+
+
+    // Honor deep links on refresh (e.g., #presentations) after dynamic content loads.
+    const hash = (window.location.hash || "").replace("#","").trim();
+    if(hash){
+      const target = document.getElementById(hash);
+      if(target){
+        window.setTimeout(() => {
+          target.scrollIntoView({ behavior: "auto", block: "start" });
+          setActiveNav();
+        }, 300);
+      }
+    }
+  
 }
 
 init().catch(err => {
