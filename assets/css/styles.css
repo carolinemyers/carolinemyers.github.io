@@ -909,3 +909,23 @@ a.button:hover, .button:hover{
 
 
 .hero .hero-copy h1{ font-size: 1.85rem !important; }
+
+/* ===== Tag pills rows (fix smushed tags) ===== */
+.pill-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.pill-row .pill{
+  display: inline-block;
+}
+.pill-tag{
+  cursor: pointer;
+  user-select: none;
+}
+.pill-tag:hover{
+  border-color: rgba(47, 91, 255, 0.22);
+  background: var(--surface-2);
+  color: var(--text);
+}
