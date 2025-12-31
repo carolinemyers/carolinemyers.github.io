@@ -397,16 +397,34 @@ async function init(){
 
 
     // Honor deep links on refresh (e.g., #presentations) after dynamic content loads.
-    const hash = (window.location.hash || "").replace("#","").trim();
-    if(hash){
-      const target = document.getElementById(hash);
-      if(target){
-        window.setTimeout(() => {
-          target.scrollIntoView({ behavior: "auto", block: "start" });
-          setActiveNav();
-        }, 300);
-      }
+    // const hash = (window.location.hash || "").replace("#","").trim();
+    // if(hash){
+    //   const target = document.getElementById(hash);
+    //   if(target){
+    //     window.setTimeout(() => {
+    //       target.scrollIntoView({ behavior: "auto", block: "start" });
+    //       setActiveNav();
+    //     }, 300);
+    //   }
+    // }
+    // Honor deep links on refresh (e.g., #presentations) AFTER dynamic content + images load.
+const hash = (window.location.hash || "").replace("#","").trim();
+if(hash){
+  const scrollToHash = () => {
+    const target = document.getElementById(hash);
+    if(target){
+      target.scrollIntoView({ behavior: "auto", block: "start" });
+      setActiveNav();
     }
+  };
+
+  // After JS-rendered content is inserted (basic layout stabilization)
+  window.setTimeout(scrollToHash, 350);
+
+  // After the full page load (images/fonts) to prevent layout-shift snapping to earlier sections
+  window.addEventListener("load", () => scrollToHash(), { once: true });
+}
+
   
 }
 
