@@ -28,6 +28,16 @@ function el(tag, attrs={}, children=[]){
   return node;
 }
 
+// Escape text for safe use inside innerHTML templates
+function escapeHtml(s){
+  return String(s)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
 function iconSVG(kind){
   // Minimal inline icons (Google-y, clean).
   const common = 'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"';
@@ -546,6 +556,12 @@ const items =
 renderPresentations(items);
 
 
+  // }catch(e){
+  //   const root = document.getElementById("presentations-list");
+  //   if(root){
+  //     root.innerHTML = '<div class="card"><div class="pad">Could not load <code>data/presentations.json</code>. Check the file exists and is valid JSON.</div></div>';
+  //   }
+  // }
 } catch(e){
   const root = document.getElementById("presentations-list");
   if(root){
@@ -557,11 +573,4 @@ renderPresentations(items);
       </div></div>`;
   }
 }
-
-  // }catch(e){
-  //   const root = document.getElementById("presentations-list");
-  //   if(root){
-  //     root.innerHTML = '<div class="card"><div class="pad">Could not load <code>data/presentations.json</code>. Check the file exists and is valid JSON.</div></div>';
-  //   }
-  // }
 }
