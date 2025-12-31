@@ -13,7 +13,7 @@
       "tags": [
         "Adaptation",
         "Number",
-        "Object-based"
+        "Objects"
       ],
       "image": "assets/img/publication_img/MyersFirestoneHalberda2025.png"
 
@@ -21,15 +21,15 @@
     {
       "id": "CarrascoMyersRoberts2025",
       "year": 2025,
-      "authors": "Carrasco, M.C., Myers, C., & Roberts, M.",
+      "authors": "Carrasco, M., Myers, C., & Roberts, M.",
       "title": "Visual field asymmetries develop throughout adolescence",
       "venue": "iScience.",
       "pdf": "files/publications/CarrascoMyersRoberts2025.pdf",
       "doi": "https://doi.org/10.1016/j.isci.2025.113782",
       "osf": "https://osf.io/XJH36/",
       "tags": [
-        "Developmental neuroscience",
-        "Sensory neuroscience", "Psychology"
+        "Development",
+        "Visual field asymmetries", "Early vision"
       ],
       "image": "assets/img/publication_img/CarrascoMyersRoberts2025.png"
     },
@@ -44,7 +44,7 @@
       "doi": "https://doi.org/10.1038/s44159-022-00128-x",
       "osf": "",
       "tags": [
-        "Ambiguous perception","Motion",
+        "Early vision","Motion",
         "Psychophysics"
       ]
     },
@@ -59,8 +59,8 @@
       "doi": "https://doi.org/10.1016/j.cub.2022.04.052",
       "osf": "",
       "tags": [
-        "Developmental neuroscience","Visual field asymmetries",
-        "Psychophysics"
+        "Development","Visual field asymmetries",
+        "Psychophysics","Early vision"
       ],
       "image": "assets/img/publication_img/CarrascoRobertsMyersShukla2022.png"
     },
