@@ -228,9 +228,7 @@ async function init(){
   all.sort((a,b) => (b.year||0)-(a.year||0) || (a.order||999)-(b.order||999));
 
   const tagSet = unique(all.flatMap(p => p.tags || [])).sort((a,b)=>a.localeCompare(b));
-  //let activeTag = "All";
-  let activeTags = []; // optional multi-tag filter (OR)
-
+  let activeTag = "All";
   let q = "";
 
   function renderFilters(){
@@ -240,59 +238,14 @@ async function init(){
     for(const tag of tags){
       const btn = el("button", { class:"chip", type:"button", "aria-pressed": (tag===activeTag) ? "true" : "false" }, [tag]);
       btn.addEventListener("click", () => {
-        //activeTag = tag;
-       
-        activeTags = [];
         activeTag = tag;
         renderFilters();
         renderPubs();
-        
-       
       });
       filters.appendChild(btn);
     }
   }
 
-  function parseHashAndParams(){
-    const raw = (window.location.hash || "").replace(/^#/, "");
-    if(!raw) return { section:"home", params:{} };
-    const [section, query] = raw.split("?");
-    const params = {};
-    if(query){
-      const sp = new URLSearchParams(query);
-      for(const [k,v] of sp.entries()){
-        params[k] = v;
-      }
-    }
-    return { section: section || "home", params };
-  }
-  
-  function applyPublicationsFromHash(){
-    const { section, params } = parseHashAndParams();
-    if(section !== "publications") return;
-  
-    // Support both:
-    //  - #publications?tag=Adaptation
-    //  - #publications?tags=Adaptation,Object-based
-    const tagSingle = params.tag ? decodeURIComponent(params.tag) : "";
-    const tagMultiRaw = params.tags ? decodeURIComponent(params.tags) : "";
-    const multi = tagMultiRaw
-      ? tagMultiRaw.split(",").map(s => s.trim()).filter(Boolean)
-      : [];
-  
-    if(tagSingle){
-      activeTags = [];
-      activeTag = tagSingle;
-      renderFilters();
-      renderPubs();
-    }else if(multi.length){
-      activeTag = "All";
-      activeTags = multi;
-      renderFilters();
-      renderPubs();
-    }
-  }
-  
   // function renderPubs(){
   //   if(!pubList) return;
   //   const filtered = all.filter(p => {
@@ -343,14 +296,8 @@ async function init(){
     if(!pubList) return;
   
     const filtered = all.filter(p => {
-    //  const okTag = (activeTag === "All") || (p.tags || []).includes(activeTag);
-     
-    const okTag = (activeTags.length === 0)
-  ? ((activeTag === "All") || (p.tags || []).includes(activeTag))
-  : (p.tags || []).some(t => activeTags.includes(t));
-
-
-    const okQ = !q || pubToText(p).includes(q);
+      const okTag = (activeTag === "All") || (p.tags || []).includes(activeTag);
+      const okQ = !q || pubToText(p).includes(q);
       return okTag && okQ;
     });
   
@@ -471,13 +418,6 @@ async function init(){
   // If loading with a hash, make sure nav highlight is correct after layout
   window.setTimeout(setActiveNav, 250);
 
-// Apply tag filters if the URL includes #publications?tag=... or #publications?tags=...
-applyPublicationsFromHash();
-
-// Re-apply if user changes hash (clicking research questions / tag links)
-window.addEventListener("hashchange", () => {
-  applyPublicationsFromHash();
-});
 
 
     // Honor deep links on refresh (e.g., #presentations) after dynamic content loads.
