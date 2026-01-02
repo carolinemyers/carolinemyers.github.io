@@ -231,6 +231,34 @@ async function init(){
   let activeTag = "All";
   let q = "";
 
+  
+  function getTagFromHash(){
+    const raw = (window.location.hash || "").replace(/^#/, "");
+    if(!raw) return "";
+    const [section, query] = raw.split("?");
+    if((section || "").toLowerCase() !== "publications") return "";
+    if(!query) return "";
+    const sp = new URLSearchParams(query);
+    const t = sp.get("tag");
+    return t ? decodeURIComponent(t) : "";
+  }
+
+  function applyPubTagFromHash(){
+    const t = getTagFromHash();
+    if(!t) return;
+    // Only apply if the tag actually exists; otherwise ignore
+    if(t !== "All" && !tagSet.includes(t)) return;
+    activeTag = t;
+
+    // Clear search when jumping via research questions
+    q = "";
+    if(search) search.value = "";
+
+    renderFilters();
+    renderPubs();
+  }
+
+
   function renderFilters(){
     if(!filters) return;
     filters.innerHTML = "";
@@ -354,8 +382,19 @@ async function init(){
   }
   
 
+  // renderFilters();
+  // renderPubs();
   renderFilters();
   renderPubs();
+
+  // Apply tag filter if URL is like #publications?tag=...
+  applyPubTagFromHash();
+
+  // Re-apply when hash changes (e.g., clicking research questions)
+  window.addEventListener("hashchange", () => {
+    applyPubTagFromHash();
+  });
+
 
   if(search){
     search.addEventListener("input", (e) => {
