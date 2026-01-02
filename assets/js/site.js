@@ -391,10 +391,22 @@ async function init(){
   applyPubTagFromHash();
 
   // Re-apply when hash changes (e.g., clicking research questions)
+  // window.addEventListener("hashchange", () => {
+  //   applyPubTagFromHash();
+  // });
   window.addEventListener("hashchange", () => {
     applyPubTagFromHash();
+  
+    // Also scroll to the section when hash includes params (e.g., #publications?tag=...)
+    const raw = (window.location.hash || "").replace(/^#/, "");
+    const sectionId = raw.split("?")[0];
+    const target = document.getElementById(sectionId);
+    if(target){
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      setActiveNav();
+    }
   });
-
+  
 
   if(search){
     search.addEventListener("input", (e) => {
@@ -458,23 +470,15 @@ async function init(){
   window.setTimeout(setActiveNav, 250);
 
 
-
-    // Honor deep links on refresh (e.g., #presentations) after dynamic content loads.
-    // const hash = (window.location.hash || "").replace("#","").trim();
-    // if(hash){
-    //   const target = document.getElementById(hash);
-    //   if(target){
-    //     window.setTimeout(() => {
-    //       target.scrollIntoView({ behavior: "auto", block: "start" });
-    //       setActiveNav();
-    //     }, 300);
-    //   }
-    // }
-    // Honor deep links on refresh (e.g., #presentations) AFTER dynamic content + images load.
 const hash = (window.location.hash || "").replace("#","").trim();
 if(hash){
   const scrollToHash = () => {
-    const target = document.getElementById(hash);
+
+
+    const sectionId = hash.split("?")[0]; // allow #publications?tag=...
+    const target = document.getElementById(sectionId);
+    
+
     if(target){
       target.scrollIntoView({ behavior: "auto", block: "start" });
       setActiveNav();
