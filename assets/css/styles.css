@@ -929,3 +929,36 @@ a.button:hover, .button:hover{
   background: var(--surface-2);
   color: var(--text);
 }
+
+
+/* ===== Demo / tile link buttons (global) ===== */
+.links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-top: .55rem;
+}
+
+.link{
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .45rem .7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-size: .95rem;
+}
+
+.link:hover{
+  background: var(--surface-2);
+  border-color: rgba(47, 91, 255, 0.22);
+  text-decoration: none;
+}
+
+/* Reduce the perceived gap when a non-alt section follows an alt section (CV -> Demos) */
+.section.alt + .section{
+  padding-top: 2.6rem;
+}
