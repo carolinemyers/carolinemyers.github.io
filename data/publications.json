@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "id": "MyersFirestoneHalberda_PREPRINT",
+      "year": 2026,
+      "authors": "Myers, C., Firestone, C., & Halberda, J.",
+      "title": "Guessing reveals internal models of perceptual precision",
+      "venue": "[Preprint]",
+      "pdf": "files/publications/MyersFirestoneHalberda_PREPRINT.pdf",
+      "doi": "https://doi.org/10.1016/j.cub.2025.10.051",
+      "osf": "https://osf.io/6exy9/",
+      "tags": [
+        "Memory",
+        "Modeling"
+      ],
+      "image": "assets/img/publication_img/MyersFirestoneHalberda_PREPRINT.png"
+
+    },
+    {
       "id": "MyersFirestoneHalberda2025",
       "year": 2025,
       "authors": "Myers, C., Firestone, C., & Halberda, J.",
