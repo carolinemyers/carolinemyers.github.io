@@ -227,52 +227,138 @@ async function init(){
 // Newest first by year, then by "order" if provided
   all.sort((a,b) => (b.year||0)-(a.year||0) || (a.order||999)-(b.order||999));
 
-  const tagSet = unique(all.flatMap(p => p.tags || [])).sort((a,b)=>a.localeCompare(b));
-  let activeTag = "All";
-  let q = "";
+  // const tagSet = unique(all.flatMap(p => p.tags || [])).sort((a,b)=>a.localeCompare(b));
+  // let activeTag = "All";
+  // let q = "";
 
-  
-  function getTagFromHash(){
+  const tagSet = unique(all.flatMap(p => p.tags || [])).sort((a,b)=>a.localeCompare(b));
+
+// Multi-select tags: empty set means "All"
+let activeTags = new Set();
+let q = "";
+
+
+  // function getTagFromHash(){
+  //   const raw = (window.location.hash || "").replace(/^#/, "");
+  //   if(!raw) return "";
+  //   const [section, query] = raw.split("?");
+  //   if((section || "").toLowerCase() !== "publications") return "";
+  //   if(!query) return "";
+  //   const sp = new URLSearchParams(query);
+  //   const t = sp.get("tag");
+  //   return t ? decodeURIComponent(t) : "";
+  // }
+
+  function getTagsFromHash(){
     const raw = (window.location.hash || "").replace(/^#/, "");
-    if(!raw) return "";
+    if(!raw) return [];
     const [section, query] = raw.split("?");
-    if((section || "").toLowerCase() !== "publications") return "";
-    if(!query) return "";
+    if((section || "").toLowerCase() !== "publications") return [];
+    if(!query) return [];
+  
     const sp = new URLSearchParams(query);
-    const t = sp.get("tag");
-    return t ? decodeURIComponent(t) : "";
+  
+    // Accept either:
+    //   #publications?tag=Development&tag=Vision
+    // or:
+    //   #publications?tags=Development,Vision
+    const many = sp.getAll("tag").map(decodeURIComponent).filter(Boolean);
+  
+    const csv = (sp.get("tags") || "")
+      .split(",")
+      .map(s => decodeURIComponent(s.trim()))
+      .filter(Boolean);
+  
+    // Merge + dedupe
+    return [...new Set([...many, ...csv])];
   }
 
   function applyPubTagFromHash(){
-    const t = getTagFromHash();
-    if(!t) return;
-    // Only apply if the tag actually exists; otherwise ignore
-    if(t !== "All" && !tagSet.includes(t)) return;
-    activeTag = t;
-
+    const tags = getTagsFromHash();
+    if(tags.length === 0) return;
+  
     // Clear search when jumping via research questions
     q = "";
     if(search) search.value = "";
-
+  
+    // "All" clears everything
+    if(tags.includes("All")){
+      activeTags = new Set();
+    }else{
+      // Keep only tags that actually exist
+      const valid = tags.filter(t => tagSet.includes(t));
+      if(valid.length === 0) return;
+      activeTags = new Set(valid);
+    }
+  
     renderFilters();
     renderPubs();
   }
+  
 
+  // function applyPubTagFromHash(){
+  //   const t = getTagFromHash();
+  //   if(!t) return;
+  //   // Only apply if the tag actually exists; otherwise ignore
+  //   if(t !== "All" && !tagSet.includes(t)) return;
+  //   activeTag = t;
+
+  //   // Clear search when jumping via research questions
+  //   q = "";
+  //   if(search) search.value = "";
+
+  //   renderFilters();
+  //   renderPubs();
+  // }
 
   function renderFilters(){
     if(!filters) return;
     filters.innerHTML = "";
+  
     const tags = ["All", ...tagSet];
+  
     for(const tag of tags){
-      const btn = el("button", { class:"chip", type:"button", "aria-pressed": (tag===activeTag) ? "true" : "false" }, [tag]);
+      const isAll = (tag === "All");
+      const pressed = isAll ? (activeTags.size === 0) : activeTags.has(tag);
+  
+      const btn = el(
+        "button",
+        { class:"chip", type:"button", "aria-pressed": pressed ? "true" : "false" },
+        [tag]
+      );
+  
       btn.addEventListener("click", () => {
-        activeTag = tag;
+        if(isAll){
+          // Reset to "All"
+          activeTags = new Set();
+        }else{
+          // Toggle this tag
+          if(activeTags.has(tag)) activeTags.delete(tag);
+          else activeTags.add(tag);
+        }
+  
         renderFilters();
         renderPubs();
       });
+  
       filters.appendChild(btn);
     }
   }
+  
+  // function renderFilters(){
+  //   if(!filters) return;
+  //   filters.innerHTML = "";
+  //   const tags = ["All", ...tagSet];
+  //   for(const tag of tags){
+  //     const btn = el("button", { class:"chip", type:"button", "aria-pressed": (tag===activeTag) ? "true" : "false" }, [tag]);
+  //     btn.addEventListener("click", () => {
+  //       activeTag = tag;
+  //       renderFilters();
+  //       renderPubs();
+  //     });
+  //     filters.appendChild(btn);
+  //   }
+  // }
 
   // function renderPubs(){
   //   if(!pubList) return;
@@ -323,12 +409,20 @@ async function init(){
   function renderPubs(){
     if(!pubList) return;
   
+    // const filtered = all.filter(p => {
+    //   const okTag = (activeTag === "All") || (p.tags || []).includes(activeTag);
+    //   const okQ = !q || pubToText(p).includes(q);
+    //   return okTag && okQ;
+    // });
     const filtered = all.filter(p => {
-      const okTag = (activeTag === "All") || (p.tags || []).includes(activeTag);
+      const okTag =
+        (activeTags.size === 0) ||
+        (p.tags || []).some(t => activeTags.has(t));
       const okQ = !q || pubToText(p).includes(q);
       return okTag && okQ;
     });
-  
+
+    
     pubList.innerHTML = "";
   
     if(filtered.length === 0){
