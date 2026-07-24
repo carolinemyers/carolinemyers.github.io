@@ -1,17 +1,18 @@
 {
   "items": [
     {
-      "id": "MyersHalberdaPreprint",
+      "id": "MyersFlombaumHalberda_PREPRINT",
       "year": 2026,
-      "authors": "Myers, C. & Halberda, J.",
+      "authors": "Myers, C., Flombaum, J., & Halberda, J.",
       "title": "Feature-matched masking reveals a dissociation between iconic and working memory",
       "venue": "[Preprint]",
-      "pdf": "files/publications/MyersHalberdaPreprint.pdf",
+      "osf": "https://osf.io/b89kh/overview?view_only=22ad5942d4bd417ca41382fdb141032e",
+      "pdf": "files/publications/MyersFlombaumHalberdaPREPRINT.pdf",
       "tags": [
         "Memory",
         "Models"
       ],
-      "image": "assets/img/publication_img/MyersHalberdaPreprint.png"
+      "image": "assets/img/publication_img/MyersFlombaumHalberdaPREPRINT.png"
 
     },
     {
