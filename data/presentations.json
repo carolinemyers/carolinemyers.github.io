@@ -1,6 +1,26 @@
 {
   "items": [
-    {
+   
+   {
+     "title": "Guessing reveals internal models of perceptual precision",
+     "type": "Poster",
+     "venue": "European Conference on Visual Perception (ECVP)",
+     "year": 2026,
+     "pdf": "files/presentations/MyersCogSci2026.pdf",
+     "authors": "Myers, C., Firestone, C., & Halberda, J.",
+     "tags": ["models", "memory", "guessing"]
+   },
+   {
+     "title": "Dynamic masks interfere with iconic but not visual working memory",
+     "type": "Poster",
+     "venue": "Vision Sciences Society (VSS)",
+     "year": 2026,
+     "pdf": "files/presentations/MyersVSS2026.pdf",
+     "authors": "Myers, C. & Halberda, J.",
+     "tags": ["memory", "masking"]
+   },
+   
+   {
       "title": "Covert exogenous spatial attention improves performance similarly across development",
       "type": "Talk",
       "venue": "European Conference on Visual Perception (ECVP)",
@@ -39,7 +59,7 @@
       "description": "Recorded talk (embedded from YouTube).",
       "youtubeId": "Dr513JVe3bk",
       "tags": [
-        "working memory","mixture modeling",
+        "memory","models",
         "guessing"
       ]
     },
@@ -63,7 +83,7 @@
       "authors": "Halberda, J., Myers, C., & Firestone, C.",
       "pdf": "files/presentations/MyersVSS2022b.pdf",
       "tags": [
-        "working memory","mixture modeling",
+        "memory","models",
         "guessing"
       ]
     },
